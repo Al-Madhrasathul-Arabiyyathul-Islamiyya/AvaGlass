@@ -113,7 +113,7 @@ For best results, you need to enable window transparency in your main window:
 
 ## Requirements
 
-- Avalonia 11.0.0 or higher
+- Avalonia 11.2.5 or higher
 - .NET 9.0 or higher
 - SkiaSharp 2.88.0 or higher
 
