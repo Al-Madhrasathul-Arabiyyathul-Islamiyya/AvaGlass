@@ -1,0 +1,17 @@
+<Styles
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:controls="using:AvaGlass.Controls">
+
+  <!--  Additional style class for Windows 11 Acrylic  -->
+  <Style Selector="controls|GlassmorphicPanel.acrylic">
+    <!--  Additional styling specific to acrylic mode  -->
+    <Setter Property="Background" Value="#30000000" />
+    <Setter Property="BorderBrush" Value="#20FFFFFF" />
+
+    <!--  Make the NoiseLayer visible in acrylic mode  -->
+    <Style Selector="^ /template/ Border#PART_NoiseLayer">
+      <Setter Property="IsVisible" Value="True" />
+    </Style>
+  </Style>
+</Styles>

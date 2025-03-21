@@ -1,0 +1,15 @@
+<Styles
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:converters="using:AvaGlass.Converters">
+
+  <Styles.Resources>
+    <!--  Register converters  -->
+    <converters:ColorToSolidBrushConverter x:Key="ColorToSolidBrushConverter" />
+    <converters:ColorToBoxShadowConverter x:Key="ColorToBoxShadowConverter" />
+  </Styles.Resources>
+
+  <!--  Include all styles  -->
+  <StyleInclude Source="avares://AvaGlass/Styles/GlassmorphismStyles.axaml" />
+  <StyleInclude Source="avares://AvaGlass/Styles/AcrylicStyles.axaml" />
+</Styles>

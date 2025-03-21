@@ -1,0 +1,57 @@
+<Styles
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:controls="using:AvaGlass.Controls">
+
+  <!--  Default style for the GlassmorphicPanel  -->
+  <Style Selector="controls|GlassmorphicPanel">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="CornerRadius" Value="8" />
+    <Setter Property="Padding" Value="12" />
+    <Setter Property="ClipToBounds" Value="True" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border
+          Name="PART_Border"
+          Background="{TemplateBinding Background}"
+          BorderBrush="{TemplateBinding BorderBrush}"
+          BorderThickness="{TemplateBinding BorderThickness}"
+          ClipToBounds="True"
+          CornerRadius="{TemplateBinding CornerRadius}">
+          <Grid>
+            <!--  Add the backdrop blur control  -->
+            <controls:BackdropBlurControl BlurRadius="{Binding BlurRadius, RelativeSource={RelativeSource TemplatedParent}}">
+              <controls:BackdropBlurControl.Material>
+                <ExperimentalAcrylicMaterial
+                  MaterialOpacity="{Binding TintOpacity, RelativeSource={RelativeSource TemplatedParent}}"
+                  TintColor="{Binding TintColor, RelativeSource={RelativeSource TemplatedParent}}"
+                  TintOpacity="{Binding TintOpacity, RelativeSource={RelativeSource TemplatedParent}}" />
+              </controls:BackdropBlurControl.Material>
+            </controls:BackdropBlurControl>
+
+            <!--  Content presenter  -->
+            <ContentPresenter
+              Name="PART_ContentPresenter"
+              Padding="{TemplateBinding Padding}"
+              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+              Content="{TemplateBinding Content}"
+              ContentTemplate="{TemplateBinding ContentTemplate}" />
+          </Grid>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+
+  <!--  Style class for glassmorphism mode  -->
+  <Style Selector="controls|GlassmorphicPanel.glassmorphism">
+    <Setter Property="Background" Value="#01FFFFFF" />
+    <Setter Property="BorderBrush" Value="#40FFFFFF" />
+  </Style>
+
+  <!--  Style class for acrylic mode  -->
+  <Style Selector="controls|GlassmorphicPanel.acrylic">
+    <Setter Property="Background" Value="#01000000" />
+    <Setter Property="BorderBrush" Value="#20FFFFFF" />
+  </Style>
+</Styles>
